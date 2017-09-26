@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DragButton">
+        <attr name="imageBtnSizePercentage" format="float"/>
+        <attr name="dragEndThresholdPercentage" format="float"/>
+        <attr name="arrowCount" format="integer"/>
+        <attr name="iconFileName" format="string"/>
+
+    </declare-styleable>
+
+</resources>
