@@ -28,6 +28,7 @@ import java.io.IOException;
 
 public class DragButton extends View {
 
+
     public enum Sides{
         Left, Right,  Top, Bottom
     }
@@ -37,6 +38,7 @@ public class DragButton extends View {
     private float dragEndThresholdPercentage;
     private int arrowCount;
     private String iconFName;
+    private String arrowColor;
 
 
     private boolean buttonPressed;
@@ -83,6 +85,9 @@ public class DragButton extends View {
         imageBtnSizePercentage = arr.getFloat(R.styleable.DragButton_imageBtnSizePercentage, 0.25f);
         dragEndThresholdPercentage = arr.getFloat(R.styleable.DragButton_dragEndThresholdPercentage, 0.05f);
         arrowCount = arr.getInteger(R.styleable.DragButton_arrowCount, 3);
+        arrowColor = arr.getString(R.styleable.DragButton_arrowColor);
+        if(arrowColor == null)
+            arrowColor = "#de4f4f";
         iconFName = arr.getString(R.styleable.DragButton_iconFileName);
         if (iconFName == null)
             iconFName = "icon.png";
@@ -157,7 +162,7 @@ public class DragButton extends View {
 
     private void drawMarkers(Canvas canvas) {
         Paint redLow = new Paint();
-        redLow.setColor(android.graphics.Color.parseColor("#de4f4f"));
+        redLow.setColor(android.graphics.Color.parseColor(arrowColor));
         redLow.setStyle(Paint.Style.FILL);
 
         float size = 20;
